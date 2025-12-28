@@ -1,0 +1,326 @@
+body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldset, input, textarea, blockquote, clipshead {
+	margin: 0; padding: 0; border: 0; font-family: "Open Sans", sans-serif;
+	text-rendering: optimizeLegibility;
+}
+
+body { /* Default font size and colour */
+	background-image: url('../images/IMG_1365blue2.jpg');
+	color: #5f6975; /* Dark grey */
+	font-size: 14px;
+	line-height: 1.714285714;
+	background-attachment: fixed; /* Background image does not scroll with page */
+}
+
+/* =========================================== LAYOUT ===================================================================================================== */
+/* Container for the whole page - fixed width and centred */
+.wrapper { max-width:960px; background: white;
+	margin:0 auto 0 auto; /* Centres the block in a way that even IE6 can cope with */
+	padding-left: 3%; padding-right: 3%; padding-top: 24px;  }
+
+.footer_wrapper { float: left; background: white; width: 100%;
+	font-size: 10px; text-align: left;
+	padding-top: 10px; padding-bottom: 10px; margin-bottom: 20px; }
+
+div.stretch { /* A hack to make containers stretch around floated elements that they contain */
+	clear: left; line-height: 0; height: 0; }
+	
+	
+hr.fixed { width: 100%; clear:both; } /* Forces the hr to come after text above it (otherwise floated text will appear before, even if it is after in the html) */
+	
+.site_title { padding-top: 10px; }
+.site_description { padding-top: 0px; padding-bottom: 10px; }
+
+/* =================================== RESPONSIVE LAYOUT ELEMENTS ========================================================================================== */
+/* Design is mobile-first. For TABLETS AND DESKTOPS the layout changes */
+/* the main column is on the left, the secondary column on the right */
+/* To do this, we need to limit the widths of the columns... */
+
+.full_column { width:100%; clear: both } /* A column that is always full width, whatever the viewport */
+
+@media (min-width: 1015px) { /* If page GREATER THAN 1015px */
+	.main_column { float: left; width: 620px; padding-right: 20px; } /* A wide column that floats on the left */
+	.news_column { width: 300px; } /* A narrow column that floats on the right */
+	body { margin-top: 50px; } /* Create a space above the main white text box, for background image to show through */ 
+		
+}
+
+@media (max-width: 660px) { /* MOBILE: page is SMALLER than 660px... */
+body { font-size: 18px; }	/* Bigger font for smaller devices */
+}
+/* --------------------------------- End of RESPONSIVE LAYOUT ELEMENTS --------------------------------------- */
+
+/* ============================ BASIC PARAGRAPHS ============================================================================= */
+p { /* Auto hyphenation */ -ms-word-break: break-all; word-break: break-all; word-break: break-word; -o-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;
+/* Space after paragraphs */ font-size: 14px; line-height: 1.714285714; margin: 0 0 14px; margin: 0 0 1.0rem; }
+p.right { text-align:right; }
+p.left { text-align: left; }
+
+/* ================================== IMAGES ================================================================================= */
+image { max-width:100%; border-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
+.main-image { max-width:100%; border-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
+
+@media (min-width: 1015px) { image.right { width:580px;} } /* If page GREATER THAN 1015px */
+	
+.small-image { border-radius: 1px; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2); }
+.image_caption { font-size: 12px; padding-top: 0px; padding-bottom: 0px; }
+.image_caption2 { position: relative; font-size: 12px; padding-top: 0px; padding-bottom: 0px; } /* NOT USED This version of image caption is used to contain photo_credit2 */
+.photo_credit { font-size: 10px; text-align: right; padding-top: 0px; padding-bottom: 0px; }
+.photo_credit2 { position: absolute; top: 0px; right: 0px; font-size: 10px; } /* NOT USED This version of photo credit floats on the right level with the image caption. Must be inside image caption 2 div */
+.photo_credit3 { float: right; top: 0px; right: 0px; font-size: 10px; }/* This version of photo credit floats on the right level with the image caption. Must be inside image caption 2 div */
+
+/* ================================= SEPARATOR =============================================================================== */
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #eee; margin: -2px 0 3px 0px; padding: 0 0 0 0; } 
+
+/* ================================= HEADINGS =================================================================================*/
+h1 { text-align: left; font-size: 36px; margin: 0 0 -10px 0; }
+h2 { text-align: left; font-size: 24px; margin: 0 0 0 0; }
+h3 { /* Main heading for various things - white text on a grey background */
+text-align: left; background: #5f6975; font-size: 24px; color: white; padding-left: 10px; border-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; }
+h4 { text-align: left; font-size: 18px; padding-top: 10px; padding-bottom: 10px; }
+
+/* ================================== LINKS ================================================================================== */
+a { font-style:normal; text-decoration:inherit ; background: inherit; color:#7f1a41; } /* Colour is dark red/pink */
+a:hover { font-style:normal; text-decoration:none; color:#d42b6c; } /* Hover colour is bit lghter red/pink */
+a[name]:hover { /* gets rid of hover style on named anchors. (But we're not using named anchors, as they're SO old-school) */ text-decoration: inherit; color: inherit; background: inherit;
+}
+.site_title a { /* gets rid of link colour on the "Andrew Lewis" text in the site title... */ text-decoration: inherit; color: inherit; background: inherit;
+}
+.site_title a:hover { /* ...but hover is coloured on the "Andrew Lewis" text in the site title */ text-decoration: inherit; color: #d42b6c; } /* Hover colour is bit lghter red/pink */
+}
+/* ================================ NAVIGATION =============================================================================== */
+/* ================================ FOR PHONES =============================================================================== */
+/* The menu that appears at the side when the hamburger is clicked ( uses ID [ JPanelMenu-menu ] ) */
+#jPanelMenu-menu { margin-top: 0px; margin-right: 0px; padding-top: 20px; padding-right: 20px; text-align: right; color: white; font-size: 18px; background: transparent; }
+#jPanelMenu-menu ul li { background: #4b545f; padding-top: 2px; padding-bottom: 2px; padding-right: 10px; border-top: 1px solid #575d66; border-bottom: 1px solid #434a54;}
+#jPanelMenu-menu ul li li { background: #5f6975; padding-top: 2px; padding-bottom: 2px; padding-right: 20px; font-size: 16px; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a;}
+#jPanelMenu-menu ul li a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
+/* ============================== The hamburger icon ========================== */
+.hamburger { float: right; position:relative }
+.hamburger span { /* This makes the actual hamburger menu icon */
+	display: block;
+	width: 25px; /* Width of the whole hamburger */
+	height: 5px; /* Thickness of hamburger stripes */
+	margin: 4px 0; /* Spaces between hamburger stripes */
+	background: #5f6975; /* Colour of the hamburger! */
+	z-index: 99; /* Make sure hamburger is on top */
+}
+/*---------------------------- End of hamburger icon -----------------------------*/
+
+/* ================================ NAVIGATION =============================================================================== */
+/* ========================= FOR TABLETS AND DESKTOPS ======================================================================== */
+/* The traditional drop-down menu (uses class [ nav ] ) */
+/* The MENU BAR itself... */
+nav { margin: 0px auto; text-align: left; color: white; font-size: 14px; }
+nav ul ul { display: none; }
+nav ul li:hover > ul { display: block; }
+nav ul { background: white; /* Background colour of the menu bar */
+padding: 0 0px; list-style: none; position: relative; display: inline-table;
+z-index:1;/* Ensures menu drawn on top of audioplayer graphics on soundclips page */ }
+
+/* The TOP LEVEL menu items in the menu bar... */
+nav ul:after { content: ""; clear: both; display: block; }
+nav ul li { float: left; }
+nav ul li:hover { background: #4b545f; } 
+nav ul li:hover a { /* Hover style for main menu links - no change of colour or underline */ color: white; text-decoration:none; }
+nav ul li a { display: block; padding: 5px 15px; color: #757575; text-decoration: none; }	
+
+/* The SECOND LEVEL drop down menu items... */
+nav ul ul { background: #5f6975 ; border-radius: 0px; padding: 0;position: absolute; top: 100%; }
+nav ul ul li { float: none;border-top: 1px solid #6b727c;border-bottom: 1px solid #575f6a; position: relative; }
+nav ul ul li a { padding: 5px 30px;color: #fff; }	
+nav ul ul li a:hover { background: #4b545f; }
+nav ul ul ul {}
+
+/* ================= To convert menu to hamburger when screen is small ============================================================== */
+@media (max-width: 660px) { /* If page is SMALLER than 660px... */
+/* hide all nav items (i.e. the dropdown menus  */ 	
+nav { display: none; }
+}
+
+@media (min-width: 659px) { /* If page is LARGER than 660px... */
+/* hide all .menu-trigger items (.menu-trigger is a wrapper for all the responsive menu items, including the hamburger icon and the actual menu links */
+	.menu-trigger { display: none; }
+}
+
+/* ==================== Dropdown menu to choose order of listings =================== */
+.dropbtn { /* The dropdown button text */
+    background-color: #FFFFFF;
+	font: inherit;
+    color: inherit;
+    padding: 3px 20px 3px 20px ;
+    font-size: 12px;
+    border: 1px;
+	border-style:ridge;
+	border-color:#5f6975;
+    cursor: pointer;
+}
+
+.dropdown { /* The dropdown button floating box */
+    position: static;
+    display: inline-block;
+}
+
+.dropdown-content {  /* The actual dropdown bit */
+    display: none;
+    position: fixed;
+	text-align:center;
+    background-color: #5f6975;
+
+    min-width: 154px;
+    margin-left: 42px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+}
+
+.dropdown-content a { /* The dropdown menu item link */
+	font:inherit;
+	font-size: 12px;
+    color: white;
+    padding: 3px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* .dropdown-content a:hover {background-color: #4b545f;} colour of dropdown menu with mouse over */
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: white;
+
+}
+/* ------------------------------- End of Navigation ------------------------------------ */
+
+/* ============= Twitter feed (main page) ========================================================================== */
+.twitter { text-align:center }	/* Twitter feed is visible */
+@media (max-width: 660px) { /* MOBILE: page is SMALLER than 660px... */
+.twitter { display: none; }	/* Twitter feed disappears */
+}
+a.twitter-timeline { font: normal 10px/12px Arial, Helvetica, sans-serif; color:#757575; }
+
+
+/* ========= TABLES ===================================================================================================*/
+table, th, td { border:0px; padding:0px; }
+th { text-align: left; font-size: 14px; }/*Table header style */
+td { vertical-align: top }
+td.right { text-align:right }
+table.workslist { width: 100%}
+table.CDlist { width: 100%; font-size: 12px; }
+
+
+/* =============== NEWS ========================================================================================== */
+/* For news items on main page */
+newshead { font-size: 18px; line-height: 1.0;} /* In body line height is 1.71. But in multi-line headings we don't want too much space, so 1.0 is enough. */
+p.news { font-size: 11px; margin: 0 0 12px; }
+.news_column { float: left; max-width: 100%; font-size: 11px; } /* (Not sure we use this any more) */
+
+/* ================ WORKS ============================================================================================ */
+
+
+th.workslist { font-size: 16pt; }
+.worksinfo { float: left; font-size: 14px; }
+.worksprognote { float: left; font-size: 14px; margin-left: 15px;}
+@media (min-width: 1015px) { /* If page GREATER THAN 1015px */
+	.worksinfo { width:400px; }
+	.worksprognote { width:540px; } }
+/* ================ SOUNDCLIPS ============================================================================== */
+.soundclipsleftcolumn { clear: left; float: left; margin: 10px 30px 10px 10px; font-size: 14px; }
+.soundclipsrightcolumn { float: right; max-width:500px; margin: 10px; font-size: 14px; }
+/* ================ SOFTWARE ============================================================================== */
+.softwareleftcolumn { clear: left; float: left; margin: 10px; font-size: 14px; }
+.softwarerightcolumn { float: left; max-width:500px; font-size: 14px; }
+@media (min-width: 1015px) { /* If page GREATER THAN 1015px */
+.softwarerightcolumn { float: left; font-size: 14px; }
+}
+/* ============== Press quotes =============== */
+p.press {font-size: 14px; float:right; max-width: 420px; margin-top:20px; padding-left:30px; padding-right:50px;}
+
+/* =============== PROGNOTES ========================================================================================== */
+
+#prognote-container { /* A box with shadow effect, like a paper page */
+	padding: 20px 20px 1px 20px; /* top right bottom left */
+	box-shadow: 1px 1px 5px  #888888; }
+p.prognote { text-align:justify; font-size:12px; }/* Main body of prognote */
+
+p.prognote-quote { /* For quotations at top of programme notes */
+	margin-left: 40px; margin-right: 40px; margin-bottom: 0px; /* No 'extra line' after this para */
+	font-size:13px; text-align:justify; }
+p.prognote-attrib { /* For attribution at end of quotations */
+	margin-right: 40px; margin-bottom: 10px; /* Smaller 'extra line' after this para */
+	font-size:12px; font-style:italic; text-align: right; }
+div.prognote { position: relative; text-align:justify; font-size:12px; }/* Special version of body of prognote, for use with prognote-tab, to contain it */
+div.prognote-tab { /* This <div> class simulates a single tab in programme notes  (must be inside prognote div)*/
+  position: absolute; top: 0px; left: 40px; text-align:justify; font-size:12px; 
+}
+div.prognote-tab2 { /* This <div> class simulates a single tab in programme notes  (must be inside prognote div)*/
+  position: absolute; top: 0px; left: 40px; text-align:justify; font-size:12px; 
+}
+div.prognote-aftertab { /* This <div> class is for use after the tab div (must be inside prognote-tab div) */
+  position: relative; top: 0px; left: -40px; text-align:justify; font-size:12px; 
+}
+.prognote-title { font-size:24px; text-align:center; margin-bottom: 10px; }/* Smaller 'extra line' after this para */
+.prognote-dedication { font-size:12px; font-style:italic; text-align:center; }
+
+/*===============  PERFORMANCES ==========================================================================================*/
+
+.perflist { font-size: 11px; }/*For table of list of performances */
+/* ========= Responsive Works table ===================================================================================================*/
+.performance { font-size: 11px; text-align: left; float:left; width:100%; }
+.perf-title { float:left; width:23%; font-weight:bold; }
+.perf-date { float:left; width:8%; }
+.perf-venue { float:left; width:45%; }
+.perf-performer { float:left; width:23%; }
+@media (max-width: 1015px) { /* Page is SMALLER than 1015px (smaller than full-width)... */
+.performance { text-align: left; font-size: 14px; }	/* Bigger font for smaller devices */
+.perf-title { width:45%; }
+.perf-date  { width:55%;}
+.perf-venue { width:45%; }
+.perf-performer { width:55%; }
+}
+@media (max-width: 660px) { /* MOBILE - page is SMALLER than 660px (smaller than full-width)... */
+.performance { font-size: 14px; }	/* Bigger font for smaller devices */
+.perf-title { width:60%; }
+.perf-date  { width:40%;  text-align:right; }
+.perf-venue { width:100%; }
+.perf-performer { width:100%; }
+}
+
+/* =============== CONTACT ====================================================================================================*/
+
+.contactleftcolumn { float: left; width:400px; font-size: 14px; }
+.contactrightcolumn { float: right; width:500px; font-size: 14px;}
+
+/* =============== RECORDINGS =========================================================================================================*/
+
+.recordingsleftcolumn { float: left; width:300px; font-size: 14px; }
+.recordingrightcolumn { float: right; width:700px; font-size: 14px;}
+
+
+clipsh2 { /* Special header for soundclips - needed so heading and small text on same line (see below) */
+	font-size: 24px; font-weight: bold; }
+clipshead span { margin-left: 10px; } /* Special arrangement for soundclips header so heading and small text on same line */
+
+/* Audio player style*/
+.audiojs { height: 22px; background: #404040;
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #5f6975), color-stop(0.5, #69737f), color-stop(0.51, #56606b), color-stop(1, #5f6975));
+	background-image: -moz-linear-gradient(center top, #5f6975 0%, #69737f 50%, #56606b 51%, #5f6975 100%);
+	-webkit-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); -moz-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+	-o-box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3); }
+.audiojs .play-pause { width: 15px; height: 20px; padding: 0px 8px 0px 0px; } /* The area on left that contains the play/pause button */
+.audiojs p { width: 20px; height: 20px; margin: -3px 0px 0px -1px; }
+.audiojs .scrubber { background: #747e89; width: 260px; height: 10px; margin: 5px; }
+.audiojs .progress { height: 10px; width: 0px; background: #cc;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));
+        background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%); }
+.audiojs .loaded { height: 10px; background: #000;
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));
+        background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%); }
+.audiojs .time { float: left; line-height: 21px; }
+.audiojs .error-message { height: 24px;line-height: 24px; }
+
+
+
+	  
+	
