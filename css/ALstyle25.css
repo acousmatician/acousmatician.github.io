@@ -117,6 +117,8 @@ nav ul ul ul {}
 /* ================================ NAVIGATION =============================================================================== */
 /* ================================ FOR PHONES =============================================================================== */
 /* The menu that appears at the side when the hamburger is clicked ( uses ID [ JPanelMenu-menu ] ) */
+/* Make the link fill the whole row so its background is visible */
+#jPanelMenu-menu a {display: block; text-decoration: none;}
 #jPanelMenu-menu a:link,
 #jPanelMenu-menu a:visited,
 #jPanelMenu-menu a:hover,
@@ -127,6 +129,21 @@ nav ul ul ul {}
 #jPanelMenu-menu ul li { background: #4b545f; padding-top: 2px; padding-bottom: 2px; padding-right: 10px; border-top: 1px solid #575d66; border-bottom: 1px solid #434a54;}
 #jPanelMenu-menu ul li li { background: #5f6975; padding-top: 2px; padding-bottom: 2px; padding-right: 20px; font-size: 16px; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a;}
 #jPanelMenu-menu ul li a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
+
+/* ======= Chat GPT suggestion =========== */
+/* Top-level items: darker grey */
+#jPanelMenu-menu > ul > li > a {
+  background: #4b545f;
+  color: #fff !important;
+}
+
+/* Submenu items: mid grey */
+#jPanelMenu-menu ul ul > li > a {
+  background: #5f6975;
+  color: #fff !important;
+}
+/* ======= END Chat GPT suggestion =========== */
+
 /* ============================== The hamburger icon ========================== */
 .hamburger { float: right; position:relative }
 .hamburger span { /* This makes the actual hamburger menu icon */
@@ -379,37 +396,7 @@ clipshead span { margin-left: 10px; } /* Special arrangement for soundclips head
 .audiojs .time { float: left; line-height: 21px; }
 .audiojs .error-message { height: 24px;line-height: 24px; }
 
-/* ======= Chat GPT suggestion =========== */
-/* === Mobile slide-out menu: colour each item, keep panel transparent === */
 
-#jPanelMenu-menu { background: transparent; }
-
-/* Make the link fill the whole row so its background is visible */
-#jPanelMenu-menu a {
-  display: block;
-  text-decoration: none;
-}
-
-/* Top-level items: darker grey */
-#jPanelMenu-menu > ul > li > a {
-  background: #4b545f;
-  color: #fff !important;
-  padding: 2px 10px;
-}
-
-/* Submenu items: mid grey */
-#jPanelMenu-menu ul ul > li > a {
-  background: #5f6975;
-  color: #fff !important;
-  padding: 2px 20px;
-}
-
-/* Hover/focus for both */
-#jPanelMenu-menu a:hover,
-#jPanelMenu-menu a:focus {
-  background: #333;
-  color: #fff !important;
-}
 
 
 
