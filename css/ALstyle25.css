@@ -132,13 +132,17 @@ nav ul ul ul {}
 /* ======= Chat GPT suggestion =========== */
 /* Top-level items: darker grey */
 #jPanelMenu-menu > ul > li > a {
+  display: block; 
+  width: 100%; 
   background: #4b545f;
   color: #fff !important;
 }
 
 /* Submenu items: mid grey */
 #jPanelMenu-menu ul ul > li > a {
+  display: block; 
   background: #5f6975;
+  
   color: #fff !important;
 }
 /* ======= END Chat GPT suggestion =========== */
