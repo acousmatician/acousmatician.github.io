@@ -119,12 +119,12 @@ nav ul ul ul {}
 /* The menu that appears at the side when the hamburger is clicked ( uses ID [ JPanelMenu-menu ] ) */
 /* Make the link fill the whole row so its background is visible */
 #jPanelMenu-menu { margin-top: 0px; margin-right: 0px; padding-top: 20px; padding-right: 20px; text-align: left; color: white; font-size: 18px; background: transparent; }
-#jPanelMenu-menu a {display: block; text-decoration: none; color: #fff;}
+/* #jPanelMenu-menu a {display: block; text-decoration: none; color: #fff;}
 #jPanelMenu-menu a:link,
 #jPanelMenu-menu a:visited,
 #jPanelMenu-menu a:hover,
 #jPanelMenu-menu a:active,
-#jPanelMenu-menu a:focus {display: block; text-decoration: none; color: #fff;}
+#jPanelMenu-menu a:focus {display: block; background: #4b545f; text-decoration: none; color: #fff;}
 #jPanelMenu-menu ul li { display: block; background: #4b545f; padding-top: 2px; padding-bottom: 2px; padding-right: 10px; border-top: 1px solid #575d66; border-bottom: 1px solid #434a54;}
 #jPanelMenu-menu ul li li { display: block; background: #5f6975; padding-top: 2px; padding-bottom: 2px; padding-right: 20px; font-size: 16px; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a;}
 #jPanelMenu-menu ul li a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
@@ -142,7 +142,7 @@ nav ul ul ul {}
 #jPanelMenu-menu ul ul > li > a {
   display: block; 
   background: #5f6975;
-  
+    width: 100%; 
   color: #fff !important;
 }
 /* ======= END Chat GPT suggestion =========== */
