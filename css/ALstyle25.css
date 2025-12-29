@@ -91,10 +91,10 @@ a[name]:hover { /* gets rid of hover style on named anchors. (But we're not usin
 /* ================================ FOR PHONES =============================================================================== */
 /* The menu that appears at the side when the hamburger is clicked ( uses ID [ JPanelMenu-menu ] ) */
 #jPanelMenu-menu { margin-top: 0px; margin-right: 0px; padding-top: 20px; padding-right: 20px; text-align: right; color: white; font-size: 18px; background: transparent; }
-#jPanelMenu-menu ul a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
 #jPanelMenu-menu ul { background: #5f6975; padding-top: 2px; padding-bottom: 2px; padding-right: 20px; font-size: 16px; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a;}
 #jPanelMenu-menu ul li { background: #4b545f; padding-top: 2px; padding-bottom: 2px; padding-right: 10px; border-top: 1px solid #575d66; border-bottom: 1px solid #434a54;}
 #jPanelMenu-menu ul li li { background: #5f6975; padding-top: 2px; padding-bottom: 2px; padding-right: 20px; font-size: 16px; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a;}
+#jPanelMenu-menu ul a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
 #jPanelMenu-menu ul li a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
 /* ============================== The hamburger icon ========================== */
 .hamburger { float: right; position:relative }
