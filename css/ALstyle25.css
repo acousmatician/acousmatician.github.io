@@ -85,7 +85,7 @@ a[name]:hover { /* gets rid of hover style on named anchors. (But we're not usin
 }
 .site_title a { /* gets rid of link colour on the "Andrew Lewis" text in the site title... */ text-decoration: inherit; color: inherit; background: inherit;
 }
-.site_title a:hover { /* ...but hover is coloured on the "Andrew Lewis" text in the site title */ text-decoration: inherit; color: #d42b6c; } /* Hover colour is bit lghter red/pink */
+.site_title a:hover { /* ...but hover is coloured on the "Andrew Lewis" text in the site title */ text-decoration: inherit; color: #d42b6c; /* Hover colour is bit lghter red/pink */
 }
 /* ================================ NAVIGATION =============================================================================== */
 /* ================================ FOR PHONES =============================================================================== */
