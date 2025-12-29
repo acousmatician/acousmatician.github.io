@@ -379,6 +379,38 @@ clipshead span { margin-left: 10px; } /* Special arrangement for soundclips head
 .audiojs .time { float: left; line-height: 21px; }
 .audiojs .error-message { height: 24px;line-height: 24px; }
 
+/* ======= Chat GPT suggestion =========== */
+/* === Mobile slide-out menu: colour each item, keep panel transparent === */
+
+#jPanelMenu-menu { background: transparent; }
+
+/* Make the link fill the whole row so its background is visible */
+#jPanelMenu-menu a {
+  display: block;
+  text-decoration: none;
+}
+
+/* Top-level items: darker grey */
+#jPanelMenu-menu > ul > li > a {
+  background: #4b545f;
+  color: #fff !important;
+  padding: 2px 10px;
+}
+
+/* Submenu items: mid grey */
+#jPanelMenu-menu ul ul > li > a {
+  background: #5f6975;
+  color: #fff !important;
+  padding: 2px 20px;
+}
+
+/* Hover/focus for both */
+#jPanelMenu-menu a:hover,
+#jPanelMenu-menu a:focus {
+  background: #333;
+  color: #fff !important;
+}
+
 
 
 	  
