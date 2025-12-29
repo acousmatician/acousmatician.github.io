@@ -87,24 +87,7 @@ a[name]:hover { /* gets rid of hover style on named anchors. (But we're not usin
 }
 .site_title a:hover { /* ...but hover is coloured on the "Andrew Lewis" text in the site title */ text-decoration: inherit; color: #d42b6c; /* Hover colour is bit lghter red/pink */
 }
-/* ================================ NAVIGATION =============================================================================== */
-/* ================================ FOR PHONES =============================================================================== */
-/* The menu that appears at the side when the hamburger is clicked ( uses ID [ JPanelMenu-menu ] ) */
-#jPanelMenu-menu { margin-top: 0px; margin-right: 0px; padding-top: 20px; padding-right: 20px; text-align: right; color: white; font-size: 18px; background: transparent; }
-#jPanelMenu-menu ul li { background: #4b545f; padding-top: 2px; padding-bottom: 2px; padding-right: 10px; border-top: 1px solid #575d66; border-bottom: 1px solid #434a54;}
-#jPanelMenu-menu ul li li { background: #5f6975; padding-top: 2px; padding-bottom: 2px; padding-right: 20px; font-size: 16px; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a;}
-#jPanelMenu-menu ul li a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
-/* ============================== The hamburger icon ========================== */
-.hamburger { float: right; position:relative }
-.hamburger span { /* This makes the actual hamburger menu icon */
-	display: block;
-	width: 25px; /* Width of the whole hamburger */
-	height: 5px; /* Thickness of hamburger stripes */
-	margin: 4px 0; /* Spaces between hamburger stripes */
-	background: #5f6975; /* Colour of the hamburger! */
-	z-index: 99; /* Make sure hamburger is on top */
-}
-/*---------------------------- End of hamburger icon -----------------------------*/
+
 
 /* ================================ NAVIGATION =============================================================================== */
 /* ========================= FOR TABLETS AND DESKTOPS ======================================================================== */
@@ -130,6 +113,25 @@ nav ul ul li { float: none;border-top: 1px solid #6b727c;border-bottom: 1px soli
 nav ul ul li a { padding: 5px 30px;color: #fff; }	
 nav ul ul li a:hover { background: #4b545f; }
 nav ul ul ul {}
+
+/* ================================ NAVIGATION =============================================================================== */
+/* ================================ FOR PHONES =============================================================================== */
+/* The menu that appears at the side when the hamburger is clicked ( uses ID [ JPanelMenu-menu ] ) */
+#jPanelMenu-menu { margin-top: 0px; margin-right: 0px; padding-top: 20px; padding-right: 20px; text-align: right; color: white; font-size: 18px; background: transparent; }
+#jPanelMenu-menu ul li { background: #4b545f; padding-top: 2px; padding-bottom: 2px; padding-right: 10px; border-top: 1px solid #575d66; border-bottom: 1px solid #434a54;}
+#jPanelMenu-menu ul li li { background: #5f6975; padding-top: 2px; padding-bottom: 2px; padding-right: 20px; font-size: 16px; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a;}
+#jPanelMenu-menu ul li a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
+/* ============================== The hamburger icon ========================== */
+.hamburger { float: right; position:relative }
+.hamburger span { /* This makes the actual hamburger menu icon */
+	display: block;
+	width: 25px; /* Width of the whole hamburger */
+	height: 5px; /* Thickness of hamburger stripes */
+	margin: 4px 0; /* Spaces between hamburger stripes */
+	background: #5f6975; /* Colour of the hamburger! */
+	z-index: 99; /* Make sure hamburger is on top */
+}
+/*---------------------------- End of hamburger icon -----------------------------*/
 
 /* ================= To convert menu to hamburger when screen is small ============================================================== */
 @media (max-width: 660px) { /* If page is SMALLER than 660px... */
