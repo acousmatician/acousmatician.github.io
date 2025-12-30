@@ -225,9 +225,14 @@ th.workslist { font-size: 16pt; }
 @media (min-width: 1015px) { /* If page GREATER THAN 1015px */
 	.worksinfo { width:400px; }
 	.worksprognote { width:540px; } }
+	
 /* ================ SOUNDCLIPS ============================================================================== */
 .soundclipsleftcolumn { clear: left; float: left; margin: 10px 30px 10px 10px; font-size: 14px; }
 .soundclipsrightcolumn { float: right; max-width:500px; margin: 10px; font-size: 14px; }
+clips-head { /* Special header for soundclips - needed so heading and small text on same line (see below) */
+	font-size: 24px; font-weight: bold; }
+.clipsub { text-align: right; float: right; margin-top: 15px; /* Fudge, otherwise text floats at top of big heading*/font-size: 12px; font-weight: normal} /* Special arrangement for soundclips header so heading and small text on same line */
+
 /* ================ SOFTWARE ============================================================================== */
 .softwareleftcolumn { clear: left; float: left; margin: 10px; font-size: 14px; }
 .softwarerightcolumn { float: left; max-width:500px; font-size: 14px; }
@@ -298,9 +303,6 @@ div.prognote-aftertab { /* This <div> class is for use after the tab div (must b
 .recordingrightcolumn { float: right; width:700px; font-size: 14px;}
 
 
-clipsh2 { /* Special header for soundclips - needed so heading and small text on same line (see below) */
-	font-size: 24px; font-weight: bold; }
-clipshead span { margin-left: 10px; } /* Special arrangement for soundclips header so heading and small text on same line */
 
 /* Audio player style*/
 .audiojs { height: 22px; background: #404040;
