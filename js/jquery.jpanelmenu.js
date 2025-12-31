@@ -15,7 +15,7 @@
 				panel: 'body',
 				trigger: '.menu-trigger',
 				excludedPanelContent: 'style, script',
-				clone: true,
+				clone: false,
 				keepEventHandlers: false,
 
 				direction: 'right',

@@ -1,18 +1,14 @@
-<!-- ===================== Heading on every page =====================>
+<!-- ===================== Heading on every page ===================== -->
 
-<!-- ===================== Mobile menu using jpanelmenu ========================
-By default, jPanelMenu will look for an element with an ID of [menu] to use as the menu, and elements with a class of [menu-trigger] to use as the trigger(s)
-The hamburger icon and menu-trigger reside in the site title document (because the hamburger appears in the site title area) -->
+<!-- Mobile menu toggle (CSS-only) -->
+<input type="checkbox" id="nav-toggle" class="nav-toggle">
 
-<div class="menu-trigger"><!-- Wrapper for the mobile menu trigger (hamburger icon) -->
-    <div class="hamburger" id="hamburger"> 
-		<div></div><span></span><span></span><span></span><!-- Draw the hamburger icon using spans -->
-    </div> <!-- end of drawing hamburger -->
+<div class="menu-trigger">
+  <!-- Hamburger icon as a LABEL so it can toggle the checkbox -->
+  <label for="nav-toggle" class="hamburger" id="hamburger" aria-label="Open menu">
+    <div></div><span></span><span></span><span></span>
+  </label>
 </div>
 
-
 <h1 class="site_title"><a href="/">Andrew Lewis</a></h1>
-
-
-
 <h2 class="site_description">composer</h2>

@@ -11,14 +11,14 @@ body { /* Default font size and colour */
 	background-attachment: fixed; /* Background image does not scroll with page */
 }
 
-/* {
+{
   box-sizing: border-box;
-} */
+}
 
 
 /* =========================================== LAYOUT ===================================================================================================== */
 /* Container for the whole page - fixed width and centred */
-.wrapper { max-width:1015px; background: white; position: relative;
+.wrapper { max-width:1015px; background: white;
 	margin:0 auto 0 auto; /* Centres the block in a way that even IE6 can cope with */
 	padding-left: 3%; padding-right: 3%; padding-top: 24px;  }
 
@@ -45,7 +45,7 @@ hr.fixed { width: 100%; clear:both; } /* Forces the hr to come after text above 
 @media (min-width: 1015px) { /* If page GREATER THAN 1015px */
 	.main_column { float: left; width: 620px; padding-right: 20px; } /* A wide column that floats on the left */
 	.news_column { width: 300px; } /* A narrow column that floats on the right */
-	body { margin-top: 50px; } /* Create a space above the main white text box, for background to show through */ 
+	body { margin-top: 50px; } /* Create a space above the main white text box, for background image to show through */ 
 		
 }
 
@@ -61,10 +61,10 @@ p.right { text-align:right; }
 p.left { text-align: left; }
 
 /* ================================== IMAGES ================================================================================= */
-img { max-width:100%; border-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
+image { max-width:100%; border-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
 .main-image { max-width:100%; border-radius: 3px; border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); }
 
-@media (min-width: 1015px) { img.right { width:580px;} } /* If page GREATER THAN 1015px */
+@media (min-width: 1015px) { image.right { width:580px;} } /* If page GREATER THAN 1015px */
 	
 .small-image { border-radius: 1px; border-top-left-radius: 1px; border-top-right-radius: 1px; border-bottom-right-radius: 1px; border-bottom-left-radius: 1px; box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2); }
 .image_caption { font-size: 12px; padding-top: 0px; padding-bottom: 0px; }
@@ -85,7 +85,7 @@ h4 { text-align: left; font-size: 18px; padding-top: 10px; padding-bottom: 10px;
 
 /* ================================== LINKS ================================================================================== */
 a { font-style:normal; text-decoration:inherit ; background: inherit; color:#7f1a41; } /* Colour is dark red/pink */
-a:hover { font-style:normal; text-decoration:none; color:#d42b6c; } /* Hover colour is bit lighter red/pink */
+a:hover { font-style:normal; text-decoration:none; color:#d42b6c; } /* Hover colour is bit lghter red/pink */
 a[name]:hover { /* gets rid of hover style on named anchors. (But we're not using named anchors, as they're SO old-school) */ text-decoration: inherit; color: inherit; background: inherit;
 }
 .site_title a { /* gets rid of link colour on the "Andrew Lewis" text in the site title... */ text-decoration: inherit; color: inherit; background: inherit;
@@ -94,133 +94,27 @@ a[name]:hover { /* gets rid of hover style on named anchors. (But we're not usin
 }
 /* ================================ NAVIGATION =============================================================================== */
 /* ================================ FOR PHONES =============================================================================== */
-
-/* Hide checkbox off-screen */
-.nav-toggle {
-  position: absolute;
-  left: -9999px;
-}
-
-/* The hamburger icon */
-.hamburger { float: right; position: relative; cursor: pointer; z-index: 1003; }
-
+/* The menu that appears at the side when the hamburger is clicked ( uses ID [ JPanelMenu-menu ] ) */
+#jPanelMenu-menu { margin-top: 0px; margin-right: 0px; padding-top: 20px; padding-right: 20px; text-align: right; color: white; font-size: 18px; background: transparent; }
+#jPanelMenu-menu li { background: #4b545f; padding-top: 2px; padding-bottom: 2px; padding-right: 10px; border-top: 1px solid #575d66; border-bottom: 1px solid #434a54;}
+#jPanelMenu-menu li li { background: #5f6975; padding-top: 2px; padding-bottom: 2px; padding-right: 20px; font-size: 16px; border-top: 1px solid #6b727c; border-bottom: 1px solid #575f6a;}
+#jPanelMenu-menu li a { color: white; } /* Make sure moblile menu items have white text (even though they are links) */
+/* ============================== The hamburger icon ========================== */
+.hamburger { float: right; position:relative }
 .hamburger span { /* This makes the actual hamburger menu icon */
-  display: block;
-  width: 25px;   /* Width of the whole hamburger */
-  height: 5px;   /* Thickness of hamburger stripes */
-  margin: 4px 0; /* Spaces between hamburger stripes */
-  background: #5f6975; /* Colour of the hamburger */
-  z-index: 99;   /* Make sure hamburger is on top */
+	display: block;
+	width: 25px; /* Width of the whole hamburger */
+	height: 5px; /* Thickness of hamburger stripes */
+	margin: 4px 0; /* Spaces between hamburger stripes */
+	background: #5f6975; /* Colour of the hamburger! */
+	z-index: 99; /* Make sure hamburger is on top */
 }
-
-/* The mobile slide-out panel */
-.mobile-panel {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: auto;
-  min-height: 100%;
-  width: 280px;
-  padding-top: 60px; /* room for hamburger/title area */
-  transform: translateX(100%);
-  transition: transform 0.25s ease;
-  z-index: 1002;
-  background: transparent; /* you said you prefer transparent panel */
-}
-
-/* Overlay behind panel (tap to close) */
-.mobile-overlay {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 1001;
-  background: rgba(0,0,0,0.35);
-}
-
-/* When menu is toggled on */
-.nav-toggle:checked ~ .mobile-panel {
-  transform: translateX(0);
-}
-
-.nav-toggle:checked ~ .mobile-overlay {
-  display: block;
-}
-
-/* Mobile menu list styles */
-.mobile-menu {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: right;
-  font-size: 18px;
-}
-
-.mobile-menu a {
-  display: block;
-  text-decoration: none;
-}
-
-/* Top-level items */
-.mobile-menu > li {
-  background: #4b545f;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-right: 10px;
-  border-top: 1px solid #575d66;
-  border-bottom: 1px solid #434a54;
-}
-
-.mobile-menu > li > a {
-  color: white !important; /* override global link colour */
-}
-
-/* Submenu items */
-.mobile-menu li li {
-  background: #5f6975;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-right: 20px;
-  font-size: 16px;
-  border-top: 1px solid #6b727c;
-  border-bottom: 1px solid #575f6a;
-}
-
-.mobile-menu li li > a {
-  color: white !important;
-}
-
-.mobile-menu,
-.mobile-menu ul {
-  list-style: none; /* No bullets for menu items */
-  margin: 0;
-  padding: 0;
-}
-
-/* Prevent hover changing colour (since you prefer no hover colour change) */
-.mobile-menu a:hover,
-.mobile-menu a:focus,
-.mobile-menu a:active,
-.mobile-menu a:visited {
-  color: white !important;
-}
-
-/* ================= To convert menu to hamburger when screen is small ============================================================== */
-@media (max-width: 865px) { /* If page is SMALLER than 865px... */
-  nav { display: none; } /* hide dropdown menus */
-}
-
-@media (min-width: 865px) { /* If page is LARGER than 865px... */
-  .menu-trigger { display: none; } /* hide hamburger */
-  .mobile-panel { display: none; }
-  .mobile-overlay { display: none; }
-}
-
+/*---------------------------- End of hamburger icon -----------------------------*/
 
 /* ================================ NAVIGATION =============================================================================== */
 /* ========================= FOR TABLETS AND DESKTOPS ======================================================================== */
 /* The traditional drop-down menu (uses class [ nav ] ) */
 /* The MENU BAR itself... */
-
 nav { margin: 0px auto; text-align: left; color: white; font-size: 14px; }
 nav ul ul { display: none; }
 nav ul li:hover > ul { display: block; }
@@ -241,6 +135,17 @@ nav ul ul li { float: none;border-top: 1px solid #6b727c;border-bottom: 1px soli
 nav ul ul li a { padding: 5px 30px;color: #fff; }	
 nav ul ul li a:hover { background: #4b545f; }
 nav ul ul ul {}
+
+/* ================= To convert menu to hamburger when screen is small ============================================================== */
+@media (max-width: 660px) { /* If page is SMALLER than 660px... */
+/* hide all nav items (i.e. the dropdown menus  */ 	
+nav { display: none; }
+}
+
+@media (min-width: 659px) { /* If page is LARGER than 660px... */
+/* hide all .menu-trigger items (.menu-trigger is a wrapper for all the responsive menu items, including the hamburger icon and the actual menu links */
+	.menu-trigger { display: none; }
+}
 
 /* ==================== Dropdown menu to choose order of listings =================== */
 .dropbtn { /* The dropdown button text */
