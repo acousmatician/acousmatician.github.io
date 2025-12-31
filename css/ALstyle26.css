@@ -359,7 +359,7 @@ div.desc {
 
 /* =============== NEWS ========================================================================================== */
 /* For news items on main page */
-newshead { font-size: 18px; line-height: 1.0;} /* In body line height is 1.71. But in multi-line headings we don't want too much space, so 1.0 is enough. */
+news-head { font-size: 18px; line-height: 1.0;} /* In body line height is 1.71. But in multi-line headings we don't want too much space, so 1.0 is enough. */
 p.news { font-size: 11px; margin: 0 0 12px; }
 .news_column { float: left; max-width: 100%; font-size: 11px; } /* (Not sure we use this any more) */
 
