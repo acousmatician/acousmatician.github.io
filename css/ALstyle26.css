@@ -114,18 +114,21 @@ a[name]:hover { /* gets rid of hover style on named anchors. (But we're not usin
 }
 
 /* The mobile slide-out panel */
+:root {
+  --mobile-menu-v-offset: 60px;
+}
 .mobile-panel {
   position: absolute;
-  top: 1000;
+  top: 0;
   right: 0;
   height: 0;
   min-height: 0;
-  width: 280px;
-  padding-top: 0px; /* room for hamburger/title area */
-  transform: translateX(100%);
+  width: 240px;
+  padding-top: 0px; 
+  transform: translateX(100%) translateY(var(--mobile-menu-v-offset)); /* room for hamburger/title area */
   transition: transform 0.25s ease;
   z-index: 1002;
-  background: red; /* you said you prefer transparent panel */
+  background: transparent; /* you said you prefer transparent panel */
 }
 
 /* Overlay behind panel (tap to close) */
@@ -139,8 +142,15 @@ a[name]:hover { /* gets rid of hover style on named anchors. (But we're not usin
 
 /* When menu is toggled on */
 .nav-toggle:checked ~ .mobile-panel {
-  transform: translateX(0);
+  transform: translateX(0) translateY(var(--mobile-menu-v-offset));
 }
+
+@media (prefers-reduced-motion: reduce) { /* Reduce mobile menu motion on request for accessibility */
+  .mobile-panel {
+    transition: none;
+  }
+}
+
 
 .nav-toggle:checked ~ .mobile-overlay {
   display: block;
