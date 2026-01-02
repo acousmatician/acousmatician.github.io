@@ -1,0 +1,2 @@
+BATshuffle and BATmultishuffle: fixed objects not found;
+All: Module select menu now available in all modules

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en"><!--- Must specify language for auto hyphens to work -->
+
+<head> 
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <title>Andrew Lewis - Scherzo</title>
+    <meta name="description" content="Andrew Lewis, Scherzo">
+    <meta itemprop="description" content="Andrew Lewis, Scherzo">
+    <meta id="meta-tag-description" property="og.description" content="" "andrew="" lewis,="" Scherzo"="">
+    <meta property="og:site_name" content="Andrew Lewis, Scherzo">
+    <meta property="og:title" content="Andrew Lewis - Scherzo">
+    <meta property="og:url" content="https://www.bangor.ac.uk/music/staff/al/index.php">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.bangor.ac.uk/music/staff/al/images/Andrew-Lewis.jpg">
+    <meta itemprop="url" content="https://www.bangor.ac.uk/music/staff/al/index.php">
+    <meta itemprop="image" content="https://www.bangor.ac.uk/music/staff/al/images/Andrew-Lewis.jpg">
+	<!-- ============================= STYLES AND FONTS =========================== -->
+	<link href="../css/ALstyle16.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<!-- ================================= SCRIPTS ================================ -->
+	<!-- jquery is a javascript framework for things like jpanelmenu -->
+	<script src="js/jquery-1.7.2.js" type="text/javascript"></script>
+	<!-- jpanelmenu is a sidebar menu that appears when hamburger is clicked in mobile view -->
+	<script src="js/jquery.jpanelmenu.js" type="text/javascript"></script>
+	<script type="text/javascript"> $(document).ready(function () { var jPM = $.jPanelMenu(); jPM.on(); } ); </script>
+	<!-- Audio player  -->
+	<script src="../js/audiojs/audio.min.js"></script>
+	<script> audiojs.events.ready(function() { var as = audiojs.createAll(); }); </script>
+	<style> /* Replaces audio player style from main stylesheet with shorter playbar */
+	.audiojs { width: 390px; } 
+	.audiojs .scrubber { width: 260px; }
+	</style>
+</head>
+<!-- ============================== End of HEAD ============================== -->
+
+<body>
+<div class="wrapper">
+	<?php include '../site_title.php' ; ?> <!-- Site title -->	
+	<?php include '../menu.php' ; ?>	 <!-- Navigation Menus (includes mobile and desktop versions) -->
+	
+	<hr>
+	<br>
+	<h3>Scherzo</h3> 
+	<h4>acousmatic music</h4>  
+	<div class="worksinfo">
+		<p><strong>Date of composition: </strong>1992, 1993</p>
+ 		<p><strong>Duration: </strong>8:18</p>
+		<p><strong>Format:</strong> acousmatic fixed medium (2ch)</p>
+		<p><strong>Premiere (incomplete): </strong> 29 June 1992, Norwich (UK)<br> 
+	    Concert Room, Music Department, UEA<br>
+		</a><strong>Premiere (complete): </strong>28 June 1993, Birmingham (UK)<br> 
+		Adrian Boult Hall
+</a></p>
+
+		<strong>Excerpt</strong>
+	  <audio src="../audio/Lewis-Scherzo.mp3" preload="none"></audio> 
+        <br> 
+	</div>
+      
+	<div class="worksprognote">
+		<p>Programme note: (<a href="../prognotes/scherzo_prog.pdf">download as PDF</a>)</p>
+  	  	<div id="prognote-container">
+      		<p class="prognote-title">Scherzo</p>
+            <p class="prognote-dedication">– for The Stars –</p>
+			<p class="prognote">Recordings of my daughters’ voices together with some of their more musical toys provide the main source material for this celebration of - or lament for - childhood.</p>
+            <p class="prognote">In their untransformed states these two pools of material form the poles of the work between which the music voyages over a variety of routes. Occasionally the journey is straightforward, children transforming directly into toys or vice versa, but more often the music follows a more meandering path, passing through transitory, equatorial realms in which the original sources are less discernible. </p>
+            <p class="prognote">At such times, and for the greater part of the piece, it is the pure musicality of the material which is being explored, rather than its poetic or anecdotal possibilities, although suggestions of the fleeting transience of youth, the fragility of childhood innocence and the bitter-sweet remembrance of times past are never very far below the surface. </p>
+            <p class="prognote"><em>Scherzo</em> was composed during 1991 and 92 in the Electroacoustic Music Studios of the University of Birmingham, England. It was revised during the Spring and Summer of 1993, also in Birmingham, and a further 2 minutes added. The revised version was awarded a commendation in the 1994 Prix Ars Electronica, and in the same year also received First Mention in the Stockholm Electronic Arts Award. </p>
+			<p class="prognote"><em>Scherzo</em> was composed in 2016 in the Electroacoustic Music Studios of Bangor University (Wales, UK) and premiered on October 20, 2016 at Theatr Bryn Terfel, Pontio, Bangor. The piece includes recordings of  Bangor University’s Crossley-Holland collection of pre-Columbian Mexican wind instruments. My thanks to Susan Rawcliffe (flautist) and Scott Flesher (recording supervisor).</p>
+		</div>
+		<br>
+	</div>
+	<!--- Start of PERFORMANCES --->
+      <div class="full_column">
+      <hr>
+        <h4>Performances</h4>
+        <?php include '../performances/scherzo_perf.html' ?>
+         </div><!--- End of PERFORMANCES --->
+	<div class="footer_wrapper"><?php include '../footer13.php' ?></div>
+	<div class="stretch">&nbsp;</div> <!--- This is a hack to stretch the containing white area around the floated columns -->
+ </div>
+
+</body>
+</html>

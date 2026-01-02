@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en"><!--- Must specify language for auto hyphens to work -->
+
+<head> 
+	<meta charset="utf-8">
+	<title>Andrew Lewis - Page Not Found</title>
+
+	<!-- ============================= STYLES AND FONTS =========================== -->
+	<link href='/css/ALstyle16.css' rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	<!-- ================================= SCRIPTS ================================ -->
+	<script src='/js/jquery-1.7.2.js' type="text/javascript"></script>
+	<script src='/js/jquery.jpanelmenu.js' type="text/javascript"></script>
+	<!-- jpanelmenu is a sidebar menu that appears when hamburger is clicked in mobile view -->
+
+	<!-- start jpanelmenu -->
+	<script type="text/javascript">
+        $(document).ready(function () {
+            var jPM = $.jPanelMenu();
+            jPM.on();
+        });
+    </script>
+	<!-- End of jpanelmenu -->
+
+</head>
+<body>
+<div class="wrapper">
+			<?php include 'site_title.php' ; ?> <!-- Site title -->	
+	<?php include 'menu.php' ; ?>	 <!-- Navigation Menus (includes mobile and desktop versions) -->
+	<hr>
+	
+	<h3>Page not found!</h3>
+	<p><br>If you think something you're looking for should be here, please get in touch</p>
+  <div class="recordingsleftcolumn">
+	  <h4>Address</h4>
+	  Andrew Lewis<br>
+	    School of Music, Bangor University<br>
+	    College Road<br>
+	    Bangor<br>
+	    Gwynedd LL57 2DG<br>
+	    WALES, UK
+  </div>
+	
+  <div class="recordingsrightcolumn">
+      <h4>Phone</h4>
+	  +44 (0)1248 382188 
+    <h4>Email</h4>
+	  <img src="/images/email17.jpg" alt="email" width="176"></div>
+	<!-- Start of footer ======================================== -->
+
+<div class="footer_wrapper"><?php include 'footer13.php' ?>
+  </div> <!-- End of footer ======================================== -->
+<div class="stretch">&nbsp;</div> <!-- This is a hack to stretch the containing white area around the floated columns -->
+</div>
+	
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><!--- Must specify language for auto hyphens to work ---->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link href="../css/ALstyle16.css" rel="stylesheet" type="text/css">
+    <title>Andrew Lewis - Performances</title>
+    <meta name="description" content="Andrew Lewis, Performances">
+    <meta itemprop="description" content="Andrew Lewis, Performances">
+    <meta id="meta-tag-description" property="og.description" content="Andrew Lewis, Performances">
+    <meta property="og:site_name" content="Andrew Lewis, Performances">
+    <meta property="og:title" content="Andrew Lewis - Performances">
+    <meta property="og:url" content="http://www.andrewlewis.org.uk/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://www.andrewlewis.org.uk/images/Andrew_Lewis2018.jpg">
+    <meta itemprop="url" content="http://www.andrewlewis.org.uk">
+    <meta itemprop="image" content="https://www.andrewlewis.org.uk/Andrew_Lewis2018.jpg">
+    <!--- ===== Set sensible viewport for iOS devices ===== ---->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--- ============================= STYLES AND FONTS =========================== ---->
+    <link href="../css/ALstyle16.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+    <!--- ================================= SCRIPTS ================================ ---->
+    <script src="../js/jquery-1.7.2.js" type="text/javascript"></script>
+    <script src="../js/jquery.jpanelmenu.js" type="text/javascript"></script>
+    <!--- jpanelmenu is a sidebar menu that appears when hamburger is clicked in mobile view ---->
+    <!--- start jpanelmenu ---->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var jPM = $.jPanelMenu();
+            jPM.on();
+        });
+    </script>
+    <!--- End of jpanelmenu ---->
+  </head>
+  <!--- ============================== End of HEAD ============================== ---->
+  <!--- ================================= BODY ================================== ---->
+  <body>
+  	<div class="wrapper"> <!--- Container for the whole page - fixed width and centred ---->
+      <?php include '../site_title.php' ; ?>
+      <!--- Site title ---->
+      <?php include '../menu.php' ; ?>
+      <!--- Navigation Menus (includes mobile and desktop versions) ---->
+      <hr class="fixed">
+      <!--- A line --------------------------------------------------------------------------->
+      <!--- ======================= Start of main body of page =========================== ---->
+      <div class="full_column">
+        <h3>Performances</h3>
+        <br>
+        <img class="main-image" src="../images/Straatmuziek_at_ISCMWMD-crop2.jpg" alt="Performance of Straatmuziek by Defunensemble at 2019 ISCM Tallinn">
+        <div class="image_caption2">Performance of <a href="../works/straatmuziek.php"><em>Straatmuziek</em>
+          </a>by <a href="http://www.defunensemble.fi">Defunensemble</a> at the
+          <a href="https://www.worldmusicdays2019.ee/et/">2019 ISCM World Music
+            Days</a>, Tallinn
+          <div class="photo_credit3">(Photo: Rene Jakobson)</div>
+        </div>        
+        <?php include 'performances_master.html' ?>
+        <!--- End of FULL COLUMN ---->
+        <div class="footer_wrapper"><?php include '../footer13.php' ?></div>
+        <div class="stretch">&nbsp;</div>
+        <!--- This is a hack to stretch the containing white area around the floated columns ---->
+      </div>
+    </div>
+  </body>
+</html>

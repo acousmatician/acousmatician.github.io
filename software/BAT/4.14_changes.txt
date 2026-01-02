@@ -1,0 +1,6 @@
+IMPORTANT: This version and higher for Max 8 only; > 
+BATsampler8: fixed one channel of waveform not displaying ; >
+BATsampler8: sustain can now be  triggered with MIDI footswitch; >
+BATsampler8: interface tweaks
+
+

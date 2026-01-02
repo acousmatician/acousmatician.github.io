@@ -1,0 +1,2 @@
+Fixed BATboids glitching at 48kHz sample rate;
+Lots of improvements to BATscrub

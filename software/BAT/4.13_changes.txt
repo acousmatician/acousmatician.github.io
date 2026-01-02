@@ -1,0 +1,6 @@
+IMPORTANT: This version and higher for Max 8 only
+All - begun migration to mc (multichannel patching);
+BATsampler8 – a new version of BATsampler that handles 8-ch files;
+BATboids - added distance reverb;
+BATboids - added ADC input;
+BATshuffle - added MIDI fader control to grain shape;
