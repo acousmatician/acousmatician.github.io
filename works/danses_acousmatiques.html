@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head><!--- Must specify language for auto hypens to work -->
+ 
+
+<meta charset="utf-8"><title>Andrew Lewis - Danses acousmatiques	</title>
+
+
+<link href="../ALstyle13.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
+
+	<script src="../js/audiojs/audio.min.js"></script>
+<script>
+  audiojs.events.ready(function() {
+    var as = audiojs.createAll();
+  });
+</script>
+
+<style> /* Replaces audio player style from main stylesheet with shorter playbar */
+.audiojs { width: 390px; } 
+.audiojs .scrubber { width: 260px; }
+</style>
+
+</head>
+<body>
+<div id="wrapper">
+			<?php include '../site_title.php' ; ?> <!-- Site title -->	
+	<?php include '../menu.php' ; ?>	 <!-- Navigation Menus (includes mobile and desktop versions) -->
+	
+	<hr>
+	<br>
+	<h3>Danses acousmatiques</h3> 
+	<h4>acousmatic music</h4>  
+         <div class="worksleftcolumn"><p><strong>Date of composition:</strong> 2007</p>
+           <p><strong>Duration:</strong> 36 min </p>
+           <p><strong>Format:</strong> fixed medium sound (8-channel, also 5.1)</p>
+           <p><strong>Premiere:</strong> <a href="http://www.sarc.qub.ac.uk">25 October 2007,  Belfast, Northern Ireland<br> 
+SARC, Queen's University
+</a><br>
+<br>
+           <strong>Recording </strong>(5.1 and stereo): <a href="http://www.electrocd.com/en/cat/imed_0789/">Andrew Lewis 'Miroirs obscurs', audio DVD, empreintes DIGITALes, IMED 0789, 2007</a><br>
+           <a href="http://www.electrocd.com/en/cat/imed_0789/"><img src="../images/miroirs_obscurs_small.jpg"  alt="Miroirs obscurs CD"></a><br>
+           <strong>Excerpt</strong>
+           <audio src="../audio/Lewis-Atomique.mp3" preload="none"></audio>
+         </div>
+		     
+	  
+  <div class="worksrightcolumn">
+	  
+	    <p>Programme note: (<a href="../prognotes/danses_acousmatiques_prog.pdf">download as PDF</a>)</p>
+	    <p>The impetus behind <em>Danses acousmatiques</em> was the sense that while in theory space is a fundamental aspect of acousmatic music, in practice most acousmatic music uses spatialization in a relatively generalised way, in something of the manner of an ‘effect.’ Since acousmatic music is, above all, about exploring the inner nature of sound in a very detailed and intentional way, it seemed odd that spatial aspects have not always received the same level of careful attention. Even in music which claims to use space as part of its consciously composed fabric (Boulez’s Répons springs to mind) the question arises as to whether such complex and detailed spatial operations can actually be <em>perceived</em> by the listener. In response to this state of affairs, <em>Danses acousmatiques</em> represents a quest for the creative, musically significant and <em>perceptible</em> use of the spatial aspect of acousmatic music.        
+	    <p>The work is cast in the form of a suite, with nine movements comprising three interlocking series each of which draws on a different model of spatial movement, on a scale stretching from the atomic to the cosmic:        
+	    <p>Series 1 — movements <em>Vacuum (la scène vide)</em>, <em>Torquetum (pas de cinq)</em>, and <em>Nebulum</em>: the cosmos — stars, planets, the music of the spheres;        
+	    <p>Series 2 — movements <em>Shoal, Flock (pas d’action)</em>, and <em>Swarm</em>: the natural world, especially emergent flocking behaviours;        
+	    <p>Series 3 — movements <em>Danse des coups (solo)</em>, <em>Danse atomique (pas de deux)</em>, and <em>Danse des gestes (pas de trois)</em>: the human world — dance and choreographic movement.        
+	    <p>The individual series may be performed as discrete three-movement studies. Alternatively, individual movements might be performed as part of a larger program.        
+	    <p><em>Danses acousmatiques</em> was realized in the spring and summer 2007 in the Electroacoustic Music Studios of Bangor University (Wales, UK) and premiered on October 25, 2007 at SARC in Belfast (Northern Ireland, UK). Thanks to dobroide for the pigeon and bee samples.
+	  </div>
+	  <div id="footer_wrapper">
+		<?php include '../footer13.php' ?>
+  </div> <!-- End of footer ======================================== -->
+		<div class="stretch">&nbsp;</div> <!--- This is a hack to stretch the containing white area around the floated columns -->
+</div>
+	
+</body></html>
