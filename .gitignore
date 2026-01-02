@@ -5,4 +5,5 @@ _site
 vendor
 .bundle
 .DS_Store
-/dropbox_shares/ # These files are shared via dropbox, not Github Pages (e.g. Software)
+# These files are shared via dropbox, not Github Pages (e.g. Software)
+/dropbox_shares/ 
