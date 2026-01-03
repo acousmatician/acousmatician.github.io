@@ -1,33 +1,8 @@
-<!DOCTYPE html>
-<html lang="en"><head><!--- Must specify language for auto hypens to work -->
- 
+---
+layout: default
+title: Andrew Lewis | Benllech Shells
+---
 
-<meta charset="utf-8"><title>Andrew Lewis -	Benllech Shells</title>
-
-
-<link href="../ALstyle13.css" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-
-<!-- Audio player scripts -->
-<script src="../js/audiojs/audio.min.js"></script>
-<script>
-  audiojs.events.ready(function() {
-    var as = audiojs.createAll();
-  });
-</script>
-
-<style> /* Replaces audio player style from main stylesheet with shorter playbar */
-.audiojs { width: 390px; } 
-.audiojs .scrubber { width: 260px; }
-</style>
-</head>
-<body>
-<div id="wrapper">
-			<?php include '../site_title.php' ; ?> <!-- Site title -->	
-	<?php include '../menu.php' ; ?>	 <!-- Navigation Menus (includes mobile and desktop versions) -->
-	
-	<hr>
-	<br>
 	<h3>Benllech Shells </h3> 
 	<h4>acousmatic music</h4>  
          <div class="worksleftcolumn">
@@ -45,7 +20,7 @@ Powis Hall, Bangor University
 <strong>Excerpt</strong>
              <audio src="../audio/Lewis-Benllech.mp3" preload="none"></audio>  
            <p><strong>Score</strong> (spectrograph): <a href="../scores/benllech_shells_score.pdf">download as PDF</a>              <br>
-           <a href="../scores/benllech_shells_score.pdf"><img src="../images/benllech_shells_score.jpg" width="400" height="282" alt="Benllech Shells score"></a>                       
+           <a href="../scores/benllech_shells_score.pdf"><img class="noshadow" src="../images/benllech_shells_score.jpg" width="400" height="282" alt="Benllech Shells score"></a>                       
   </div>
          
 		   
@@ -61,13 +36,3 @@ Powis Hall, Bangor University
 	            <br>
               The original stereo version of Benllech Shells was composed in the Electroacoustic Music Studios of Bangor University (Wales, UK) in the summer of 2003. </p>
            
-<p></div><br></div>
-
-	  <br>
-	  <div id="footer_wrapper">
-		<?php include '../footer13.php' ?>
-  </div> <!-- End of footer ======================================== -->
-		<div class="stretch">&nbsp;</div> <!--- This is a hack to stretch the containing white area around the floated columns -->
-</div>
-	
-</body></html>
