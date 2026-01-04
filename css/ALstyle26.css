@@ -4,7 +4,7 @@ body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, dl, dt, dd, img, form, fieldse
 }
 
 body { /* Default font size and colour */
-	background-image: url('../images/IMG_1365blue2.jpg');
+	background-image: none; /* url('../images/IMG_1365blue2.jpg'); */
 	color: #5f6975; /* Dark grey */
 	font-size: 14px;
 	line-height: 1.714285714;
