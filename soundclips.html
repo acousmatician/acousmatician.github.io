@@ -1,12 +1,19 @@
 ---
 layout: default
 title: Andrew Lewis | Sound Clips
+scripts:
+  - /assets/js/audiojs/audio.min.js
+  - /assets/js/soundclipsplayer.js
 ---
-	<h3>Sound clips </h3>
+	<!--- audio player --->
+    <script>audiojs.events.ready(function() { var as = audiojs.createAll(); });</script>
+	<!--- End of audioplayer --->
+
+<h3>Sound clips </h3>
     
 	<div class="soundclipsleftcolumn">
 		<clips-head>Fern Hill<span class="clipsub"> (BBC NOW/Grant Llewellyn, BBC Radio 3)</span></clips-head>
-		<audio src="audio/Lewis-FernHill.mp3" preload="none"> </audio>
+		<audio src="/audio/Lewis-FernHill.mp3" preload="none"></audio>
         <h2>Dark Glass</h2>
 		<audio src="audio/Lewis-DarkGlass.mp3" preload="none"> </audio>
     	<h2>Lexicon<span class="clipsub">(video <a href="http://vimeo.com/55019302" title="Lexicon video">here</a>)</span></h2>

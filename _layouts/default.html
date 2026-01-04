@@ -18,6 +18,12 @@
   <div class="wrapper">
     {% include site_title.html %}
     {% include menu.html %}
+    {% if page.scripts %}
+  {% for src in page.scripts %}
+    <script src="{{ src | relative_url }}"></script>
+  {% endfor %}
+{% endif %}
+
     <hr>
 
     {{ content }}
