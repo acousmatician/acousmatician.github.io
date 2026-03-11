@@ -1,0 +1,4 @@
+VERSION 2026.11
+BATfreeze - added spectral blur/filter
+BAT-Tempered Filtbank - added spectrum capture
+Other improvements and bug fixes
