@@ -1,4 +1,5 @@
 VERSION 2026.03
 BATfreeze - added spectral blur/filter
 BAT-Tempered Filtbank - added spectrum capture
+BATpan - fixed ramp interp in stereo mode (thanks to AM)
 Other improvements and bug fixes
