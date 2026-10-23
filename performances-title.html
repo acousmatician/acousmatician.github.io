@@ -20,6 +20,10 @@ a.performance-view-button:hover, a.performance-view-button:focus-visible { backg
 </style>
 
 {% assign fields = "title,date,venue,performer" | split: "," %}
+<div class="performance-section-heading">
+  <h2 id="first-work-heading"></h2>
+  <a class="performance-view-button" href="performances-year.html">List by Year</a>
+</div>
 <div id="performances-by-title">
 {% for performance in site.data.performances_master %}
 <div class="performance">
@@ -108,19 +112,12 @@ a.performance-view-button:hover, a.performance-view-button:focus-visible { backg
   });
   const fragment = document.createDocumentFragment();
   sorted.forEach((group, index) => {
-    const heading = document.createElement('h2');
-    heading.textContent = group.title;
-    heading.style.clear = 'both';
     if (index === 0) {
-      const headingRow = document.createElement('div');
-      headingRow.className = 'performance-section-heading';
-      const button = document.createElement('a');
-      button.className = 'performance-view-button';
-      button.href = 'performances-year.html';
-      button.textContent = 'List by Work';
-      headingRow.append(heading, button);
-      fragment.append(headingRow);
+      document.getElementById('first-work-heading').textContent = group.title;
     } else {
+      const heading = document.createElement('h2');
+      heading.textContent = group.title;
+      heading.style.clear = 'both';
       fragment.append(heading);
     }
     group.rows.sort((a, b) => b.date - a.date || a.index - b.index);
