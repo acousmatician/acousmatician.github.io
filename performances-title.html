@@ -17,16 +17,24 @@ title: Andrew Lewis | Performances
 .performance-section-heading h2 { min-width: 0; }
 a.performance-view-button { display: inline-block; flex-shrink: 0; padding: 5px 12px; border-radius: 3px; background: #5f6975; color: #fff; font-size: 14px; line-height: 1.5; }
 a.performance-view-button:hover, a.performance-view-button:focus-visible { background: #424a54; color: #fff; }
+#performances-by-title .perf-date { width: 15%; }
+#performances-by-title .perf-venue { width: 55%; }
+#performances-by-title .perf-performer { width: 30%; }
+@media (max-width: 660px) {
+  #performances-by-title .perf-date,
+  #performances-by-title .perf-venue,
+  #performances-by-title .perf-performer { width: 100%; text-align: left; }
+}
 </style>
 
-{% assign fields = "title,date,venue,performer" | split: "," %}
+{% assign fields = "date,venue,performer" | split: "," %}
 <div class="performance-section-heading">
   <h2 id="first-work-heading"></h2>
   <a class="performance-view-button" href="performances-year.html">List by Year</a>
 </div>
 <div id="performances-by-title">
 {% for performance in site.data.performances_master %}
-<div class="performance">
+<div class="performance" data-work-title="{{ performance.title | escape_once }}" data-work-url="{{ performance['title-url'] | escape_once }}">
       {% for field in fields %}
         {% assign text = performance[field] | strip %}
         {% assign url_column = field | append: "-url" %}
@@ -96,14 +104,13 @@ a.performance-view-button:hover, a.performance-view-button:focus-visible { backg
 
   const groups = new Map();
   rows.forEach((row, index) => {
-    const titleCell = row.querySelector('.perf-title');
-    // Exclude the optional numbered links from the heading text.
-    const titleCopy = titleCell.cloneNode(true);
-    titleCopy.querySelectorAll('.performance-links').forEach(node => node.remove());
-    const title = workTitle(titleCopy.textContent.trim());
+    const title = workTitle(row.dataset.workTitle);
+    const url = row.dataset.workUrl.split(' | ')[0].trim();
     const key = title.toLocaleLowerCase('en');
-    if (!groups.has(key)) groups.set(key, { title, rows: [] });
-    groups.get(key).rows.push({ row, index, date: dateKey(row.querySelector('.perf-date').textContent) });
+    if (!groups.has(key)) groups.set(key, { title, url, rows: [] });
+    const group = groups.get(key);
+    if (!group.url && url) group.url = url;
+    group.rows.push({ row, index, date: dateKey(row.querySelector('.perf-date').textContent) });
   });
   const sorted = Array.from(groups.values()).sort((a, b) => {
     if (a.title === '?') return 1;
@@ -112,11 +119,18 @@ a.performance-view-button:hover, a.performance-view-button:focus-visible { backg
   });
   const fragment = document.createDocumentFragment();
   sorted.forEach((group, index) => {
-    if (index === 0) {
-      document.getElementById('first-work-heading').textContent = group.title;
+    const heading = index === 0
+      ? document.getElementById('first-work-heading')
+      : document.createElement('h2');
+    if (group.url) {
+      const link = document.createElement('a');
+      link.href = group.url;
+      link.textContent = group.title;
+      heading.append(link);
     } else {
-      const heading = document.createElement('h2');
       heading.textContent = group.title;
+    }
+    if (index !== 0) {
       heading.style.clear = 'both';
       fragment.append(heading);
     }
