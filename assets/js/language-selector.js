@@ -9,7 +9,7 @@
   selector.className = "language-selector";
 
   var summary = document.createElement("summary");
-  summary.textContent = "English";
+  summary.textContent = "EN";
   summary.setAttribute("aria-label", "Language: English");
   selector.appendChild(summary);
 
@@ -18,18 +18,25 @@
 
   // Add further languages here when they are ready. These buttons deliberately
   // have no click handlers, URLs, or saved preferences during the preview.
-  var languages = [{ code: "cy", label: "Cymraeg" }];
+  var languages = [{ code: "cy", label: "CY" }];
   languages.forEach(function (language) {
     var option = document.createElement("button");
     option.type = "button";
     option.className = "language-selector__option";
     option.lang = language.code;
+    option.setAttribute("aria-label", "Cymraeg");
     option.textContent = language.label;
     choices.appendChild(option);
   });
   selector.appendChild(choices);
 
-  wrapper.insertBefore(selector, wrapper.firstChild);
+  var title = wrapper.querySelector(".site_title");
+  if (!title) return;
+  var headingRow = document.createElement("div");
+  headingRow.className = "site-heading-row";
+  title.parentNode.insertBefore(headingRow, title);
+  headingRow.appendChild(title);
+  headingRow.appendChild(selector);
 
   document.addEventListener("click", function (event) {
     if (!selector.contains(event.target)) selector.open = false;
