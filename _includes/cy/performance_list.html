@@ -1,0 +1,47 @@
+{% assign work_url = include.work_url | default: page.english_url %}
+{% assign fields = "title,date,venue,performer" | split: "," %}
+
+{% for performance in site.data.performances_master %}
+
+  {% assign title_urls = performance["title-url"] | split: " | " %}
+  {% if title_urls contains work_url %}
+
+    <div class="performance">
+
+      {% for field in fields %}
+        {% assign text = performance[field] | strip %}
+        {% assign url_column = field | append: "-url" %}
+        {% assign url_text = performance[url_column] | strip %}
+        {% assign urls = url_text | split: " | " %}
+
+        {% if text != "" %}
+          <div class="perf-{{ field }}">
+
+            {% if url_text == "" %}
+              {{ text | escape }}
+
+            {% elsif urls.size == 1 %}
+              {% assign href = urls.first | strip %}
+              <a href="{{ site.data.welsh_pages[href] | default: href | escape }}">{{ text | escape }}</a>
+
+            {% else %}
+              {{ text | escape }}
+              <span class="performance-links">
+                (
+                {% for url in urls %}
+                  {% assign href = url | strip %}
+                  <a href="{{ site.data.welsh_pages[href] | default: href | escape }}">dolen {{ forloop.index }}</a>{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+                )
+              </span>
+            {% endif %}
+
+          </div>
+        {% endif %}
+      {% endfor %}
+
+      <hr class="fixed">
+    </div>
+
+  {% endif %}
+{% endfor %}

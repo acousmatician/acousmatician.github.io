@@ -1,0 +1,146 @@
+---
+layout: welsh
+title: Andrew Lewis | Perfformiadau
+lang: cy
+english_url: /performances-title.html
+---
+
+        <h3>Perfformiadau</h3>
+        <br>
+        <img class="main-image" src="/images/Straatmuziek_at_ISCMWMD-crop2.jpg" alt="Perfformiad o Straatmuziek gan Defunensemble yn ISCM 2019, Tallinn">
+        <div class="image_caption2">Perfformiad o <a href="/cy/works/straatmuziekCY.html"><em>Straatmuziek</em>
+          </a>gan <a href="http://www.defunensemble.fi">Defunensemble</a> yn
+          <a href="https://www.worldmusicdays2019.ee/et/">2019 ISCM World Music
+            Days</a>, Tallinn
+          <div class="photo_credit3">(Llun: Rene Jakobson)</div>
+        </div>
+
+<style>
+.performance-section-heading { display: flex; align-items: center; justify-content: space-between; gap: 16px; clear: both; }
+.performance-section-heading h2 { min-width: 0; }
+a.performance-view-button { display: inline-block; flex-shrink: 0; padding: 5px 12px; border-radius: 3px; background: #5f6975; color: #fff; font-size: 14px; line-height: 1.5; }
+a.performance-view-button:hover, a.performance-view-button:focus-visible { background: #424a54; color: #fff; }
+#performances-by-title .perf-date { width: 15%; }
+#performances-by-title .perf-venue { width: 55%; }
+#performances-by-title .perf-performer { width: 30%; }
+@media (max-width: 660px) {
+  #performances-by-title .perf-date,
+  #performances-by-title .perf-venue,
+  #performances-by-title .perf-performer { width: 100%; text-align: left; }
+}
+</style>
+
+{% assign fields = "date,venue,performer" | split: "," %}
+<div class="performance-section-heading">
+  <h2 id="first-work-heading"></h2>
+  <a class="performance-view-button" href="/cy/performances-yearCY.html">Rhestru yn ôl blwyddyn</a>
+</div>
+<div id="performances-by-title">
+{% for performance in site.data.performances_master %}
+<div class="performance" data-work-title="{{ performance.title | escape_once }}" data-work-url="{{ performance['title-url'] | escape_once }}">
+      {% for field in fields %}
+        {% assign text = performance[field] | strip %}
+        {% assign url_column = field | append: "-url" %}
+        {% assign url_text = performance[url_column] | strip %}
+        {% assign urls = url_text | split: " | " %}
+  <div class="perf-{{ field }}">
+        {% if text != "" %}
+          {% if url_text == "" %}
+            {{ text | escape_once }}
+          {% elsif urls.size == 1 %}
+            {% assign href = urls.first | strip %}
+            <a href="{{ site.data.welsh_pages[href] | default: href | escape_once }}">{{ text | escape_once }}</a>
+          {% else %}
+            {{ text | escape_once }}
+            <span class="performance-links">({% for url in urls %}{% assign href = url | strip %}<a href="{{ site.data.welsh_pages[href] | default: href | escape_once }}">dolen {{ forloop.index }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %})</span>
+          {% endif %}
+        {% endif %}
+  </div>
+      {% endfor %}
+  <hr class="fixed">
+</div>
+
+{% endfor %}
+</div>
+<script>
+(function () {
+  'use strict';
+  const container = document.getElementById('performances-by-title');
+  const rows = Array.from(container.querySelectorAll('.performance'));
+  const months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+
+  // Partial dates use zero for the missing month/day, so they follow exact dates.
+  // Date ranges sort by their opening date. The displayed source text is unchanged.
+  function dateKey(value) {
+    const text = value.trim().replace(/[–—]/g, '-');
+    const ending = text.match(/(\d{4}|\d{2})$/);
+    if (!ending) return 0;
+    let year = Number(ending[1]);
+    if (ending[1].length === 2) year += year < 50 ? 2000 : 1900;
+    let month = 0;
+    let day = 0;
+    const namedMonth = months.indexOf(text.slice(0, 3).toLowerCase());
+    if (namedMonth !== -1) {
+      month = namedMonth + 1;
+      const namedDay = text.match(/^[A-Za-z]+\s+(\d{1,2})(?:\D|$)/);
+      if (namedDay) day = Number(namedDay[1]);
+    } else if (text.includes('.')) {
+      const parts = text.split('.');
+      if (parts.length === 2) {
+        month = Number(parts[0]);
+      } else {
+        day = Number((parts[0].match(/\d+/) || ['0'])[0]);
+        // For a range spanning months, use the first month rather than the last.
+        month = Number((parts[1].match(/\d+/) || ['0'])[0]);
+      }
+    }
+    return year * 10000 + month * 100 + day;
+  }
+
+  function workTitle(value) {
+    return value.replace(/\*/g, '').trim()
+      .replace(/\s*\((?:World Premiere|excerpts?|8[- ]ch|complete)\)$/i, '')
+      .replace(/^['‘](Budo)['’]/, '$1')
+      .replace(/^môrG\)wyn$/, 'môr(G)wyn')
+      .replace(/^Llanddwn Skies$/, 'Llanddwyn Skies');
+  }
+
+  const groups = new Map();
+  rows.forEach((row, index) => {
+    const title = workTitle(row.dataset.workTitle);
+    const url = row.dataset.workUrl.split(' | ')[0].trim();
+    const key = title.toLocaleLowerCase('en');
+    if (!groups.has(key)) groups.set(key, { title, url, rows: [] });
+    const group = groups.get(key);
+    if (!group.url && url) group.url = url;
+    group.rows.push({ row, index, date: dateKey(row.querySelector('.perf-date').textContent) });
+  });
+  const sorted = Array.from(groups.values()).sort((a, b) => {
+    if (a.title === '?') return 1;
+    if (b.title === '?') return -1;
+    return a.title.localeCompare(b.title, 'en', { sensitivity: 'base', numeric: true });
+  });
+  const fragment = document.createDocumentFragment();
+  sorted.forEach((group, index) => {
+    const heading = index === 0
+      ? document.getElementById('first-work-heading')
+      : document.createElement('h2');
+    if (group.url) {
+      const link = document.createElement('a');
+      const welshPages = {{ site.data.welsh_pages | jsonify }};
+      link.href = welshPages[group.url] || group.url;
+      link.textContent = group.title;
+      heading.append(link);
+    } else {
+      heading.textContent = group.title;
+    }
+    if (index !== 0) {
+      heading.style.clear = 'both';
+      fragment.append(heading);
+    }
+    group.rows.sort((a, b) => b.date - a.date || a.index - b.index);
+    group.rows.forEach(entry => fragment.append(entry.row));
+  });
+  container.replaceChildren(fragment);
+}());
+</script>
