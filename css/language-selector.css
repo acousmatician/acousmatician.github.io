@@ -1,0 +1,105 @@
+/* Shared language dropdown. Choices are inactive until translations are added. */
+.language-selector {
+  position: relative;
+  z-index: 1004;
+  float: right;
+  width: 120px;
+  margin: 5px 0 8px 16px;
+  color: #fff;
+  font: 14px/1.5 "Open Sans", sans-serif;
+  text-align: left;
+}
+
+.language-selector > summary {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #5f6975;
+  border-radius: 3px;
+  background: #5f6975;
+  color: #fff;
+  list-style: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+.language-selector > summary::-webkit-details-marker {
+  display: none;
+}
+
+.language-selector > summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin: -3px 1px 0 12px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.language-selector[open] > summary::after {
+  margin-top: 3px;
+  transform: rotate(225deg);
+}
+
+.language-selector > summary:hover,
+.language-selector[open] > summary {
+  background: #4b545f;
+  border-color: #4b545f;
+}
+
+.language-selector > summary:focus-visible,
+.language-selector__option:focus-visible {
+  outline: 2px solid #7f1a41;
+  outline-offset: 3px;
+}
+
+.language-selector__choices {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  box-sizing: border-box;
+  min-width: 100%;
+  padding: 4px;
+  border: 1px solid #d9dde1;
+  border-radius: 3px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.language-selector__option {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 40px;
+  margin: 0;
+  padding: 8px;
+  border: 0;
+  border-radius: 2px;
+  background: #fff;
+  color: #5f6975;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.language-selector__option:hover {
+  background: #f0f2f4;
+  color: #4b545f;
+}
+
+/* Give the language selector its own row above the title and hamburger. */
+@media (max-width: 865px) {
+  .language-selector {
+    float: none;
+    margin: 0 0 8px auto;
+  }
+
+  .language-selector > summary,
+  .language-selector__option {
+    min-height: 44px;
+  }
+}
