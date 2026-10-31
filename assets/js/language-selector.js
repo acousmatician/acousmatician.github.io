@@ -1,4 +1,4 @@
-/* Shared, preview-only language selector. No language navigation is enabled. */
+/* Shared language selector. Destinations come from the site's page-language map. */
 (function () {
   "use strict";
 
@@ -16,12 +16,18 @@
   var choices = document.createElement("div");
   choices.className = "language-selector__choices";
 
-  // Add further languages here when they are ready. These buttons deliberately
-  // have no click handlers, URLs, or saved preferences during the preview.
+  // Only offer navigation when this page has a published Welsh counterpart.
   var languages = [{ code: "cy", label: "CY" }];
   languages.forEach(function (language) {
-    var option = document.createElement("button");
-    option.type = "button";
+    var destination = document.body.getAttribute("data-welsh-url");
+    var option = document.createElement(destination ? "a" : "button");
+    if (destination) {
+      option.href = destination + window.location.search + window.location.hash;
+      option.hreflang = language.code;
+    } else {
+      option.type = "button";
+      option.disabled = true;
+    }
     option.className = "language-selector__option";
     option.lang = language.code;
     option.setAttribute("aria-label", "Cymraeg");

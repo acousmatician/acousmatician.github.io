@@ -16,7 +16,7 @@
   <script src="/assets/js/language-selector.js" defer></script>
 </head>
 
-<body>
+<body data-welsh-url="{{ site.data.welsh_pages[page.url] | escape }}">
   <div class="wrapper">
     {% include site_title.html %}
     {% include menu.html %}
