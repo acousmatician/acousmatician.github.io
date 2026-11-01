@@ -12,7 +12,7 @@
 
   <link href="/css/ALstyle26.css?v=06" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
-  <link href="/css/language-selector.css" rel="stylesheet">
+  <link href="/css/language-selector.css?v=20261101" rel="stylesheet">
 
 </head>
 
@@ -41,6 +41,9 @@
 <script>
 (function () {
   var selector = document.querySelector('.language-selector');
+  var navToggle = document.querySelector('#nav-toggle');
+  navToggle.addEventListener('change', function () { if (navToggle.checked) selector.open = false; });
+  selector.querySelector('summary').addEventListener('click', function () { navToggle.checked = false; });
   document.addEventListener('click', function (event) { if (!selector.contains(event.target)) selector.open = false; });
   document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && selector.open) { selector.open = false; selector.querySelector('summary').focus(); } });
 })();

@@ -42,7 +42,19 @@
   headingRow.className = "site-heading-row";
   title.parentNode.insertBefore(headingRow, title);
   headingRow.appendChild(title);
+  var menuTrigger = wrapper.querySelector(".menu-trigger");
+  if (menuTrigger) headingRow.appendChild(menuTrigger);
   headingRow.appendChild(selector);
+
+  var navToggle = wrapper.querySelector("#nav-toggle");
+  if (navToggle) {
+    navToggle.addEventListener("change", function () {
+      if (navToggle.checked) selector.open = false;
+    });
+    summary.addEventListener("click", function () {
+      navToggle.checked = false;
+    });
+  }
 
   document.addEventListener("click", function (event) {
     if (!selector.contains(event.target)) selector.open = false;
