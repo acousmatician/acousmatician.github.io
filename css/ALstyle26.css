@@ -126,8 +126,10 @@ a[name]:hover { /* gets rid of hover style on named anchors. (But we're not usin
   min-height: 0;
   width: 240px;
   padding-top: 0px; 
-  transform: translateX(100%) translateY(var(--mobile-menu-v-offset)); /* room for hamburger/title area */
-  transition: transform 0.25s ease;
+  transform: translateY(var(--mobile-menu-v-offset)); /* stay inside the page even when closed */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
   z-index: 1002;
   background: transparent; /* you said you prefer transparent panel */
 }
@@ -143,7 +145,8 @@ a[name]:hover { /* gets rid of hover style on named anchors. (But we're not usin
 
 /* When menu is toggled on */
 .nav-toggle:checked ~ .mobile-panel {
-  transform: translateX(0) translateY(var(--mobile-menu-v-offset));
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (prefers-reduced-motion: reduce) { /* Reduce mobile menu motion on request for accessibility */
