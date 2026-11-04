@@ -1,65 +1,53 @@
-/* Shared language selector. Destinations come from the site's page-language map. */
+/* Shared EN/CY/FR selector. Destinations are provided by the page-language maps. */
 (function () {
   "use strict";
-
   var wrapper = document.querySelector(".wrapper");
-  if (!wrapper || document.querySelector(".language-selector")) return;
-
-  var selector = document.createElement("details");
+  if (!wrapper) return;
+  var current = document.documentElement.lang || "en";
+  var names = {en: "English", cy: "Cymraeg", fr: "Français"};
+  var labels = {en: "Language", cy: "Iaith", fr: "Langue"};
+  var selector = document.querySelector(".language-selector") || document.createElement("details");
+  selector.replaceChildren();
   selector.className = "language-selector";
-
   var summary = document.createElement("summary");
-  summary.textContent = "EN";
-  summary.setAttribute("aria-label", "Language: English");
+  summary.textContent = current.toUpperCase();
+  summary.setAttribute("aria-label", labels[current] + ": " + names[current]);
   selector.appendChild(summary);
-
   var choices = document.createElement("div");
   choices.className = "language-selector__choices";
-
-  // Only offer navigation when this page has a published Welsh counterpart.
-  var languages = [{ code: "cy", label: "CY" }];
-  languages.forEach(function (language) {
-    var destination = document.body.getAttribute("data-welsh-url");
-    var option = document.createElement(destination ? "a" : "button");
-    if (destination) {
-      option.href = destination + window.location.search + window.location.hash;
-      option.hreflang = language.code;
-    } else {
-      option.type = "button";
-      option.disabled = true;
-    }
+  ["en", "cy", "fr"].forEach(function (code) {
+    if (code === current) return;
+    var attribute = {en: "data-english-url", cy: "data-welsh-url", fr: "data-french-url"}[code];
+    var destination = document.body.getAttribute(attribute);
+    if (!destination) return;
+    var option = document.createElement("a");
+    option.href = destination + window.location.search + window.location.hash;
+    option.hreflang = code;
+    option.lang = code;
     option.className = "language-selector__option";
-    option.lang = language.code;
-    option.setAttribute("aria-label", "Cymraeg");
-    option.textContent = language.label;
+    option.setAttribute("aria-label", names[code]);
+    option.textContent = code.toUpperCase();
     choices.appendChild(option);
   });
   selector.appendChild(choices);
-
   var title = wrapper.querySelector(".site_title");
   if (!title) return;
-  var headingRow = document.createElement("div");
-  headingRow.className = "site-heading-row";
-  title.parentNode.insertBefore(headingRow, title);
-  headingRow.appendChild(title);
+  var headingRow = wrapper.querySelector(".site-heading-row");
+  if (!headingRow) {
+    headingRow = document.createElement("div");
+    headingRow.className = "site-heading-row";
+    title.parentNode.insertBefore(headingRow, title);
+    headingRow.appendChild(title);
+  }
   var menuTrigger = wrapper.querySelector(".menu-trigger");
   if (menuTrigger) headingRow.appendChild(menuTrigger);
   headingRow.appendChild(selector);
-
   var navToggle = wrapper.querySelector("#nav-toggle");
   if (navToggle) {
-    navToggle.addEventListener("change", function () {
-      if (navToggle.checked) selector.open = false;
-    });
-    summary.addEventListener("click", function () {
-      navToggle.checked = false;
-    });
+    navToggle.addEventListener("change", function () { if (navToggle.checked) selector.open = false; });
+    summary.addEventListener("click", function () { navToggle.checked = false; });
   }
-
-  document.addEventListener("click", function (event) {
-    if (!selector.contains(event.target)) selector.open = false;
-  });
-
+  document.addEventListener("click", function (event) { if (!selector.contains(event.target)) selector.open = false; });
   document.addEventListener("keydown", function (event) {
     if (event.key === "Escape" && selector.open) {
       var returnFocus = selector.contains(document.activeElement);

@@ -13,10 +13,11 @@
   <link href="/css/ALstyle26.css?v=07" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link href="/css/language-selector.css?v=20261101b" rel="stylesheet">
-  <script src="/assets/js/language-selector.js?v=20261101" defer></script>
+  <script src="/assets/js/language-selector.js?v=20261104" defer></script>
 </head>
 
-<body data-welsh-url="{{ site.data.welsh_pages[page.url] | escape }}">
+{% assign english_url = page.english_url | default: page.url %}
+<body data-english-url="{{ english_url | escape }}" data-welsh-url="{{ site.data.welsh_pages[english_url] | escape }}" data-french-url="{{ site.data.french_pages[english_url] | escape }}">
   <div class="wrapper">
     {% include site_title.html %}
     {% include menu.html %}
@@ -40,3 +41,4 @@
   
 </body>
 </html>
+

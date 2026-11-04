@@ -14,9 +14,11 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css">
   <link href="/css/language-selector.css?v=20261101b" rel="stylesheet">
 
+  <script src="/assets/js/language-selector.js?v=20261104" defer></script>
 </head>
 
-<body>
+{% assign english_url = page.english_url | default: page.url %}
+<body data-english-url="{{ english_url | escape }}" data-welsh-url="{{ site.data.welsh_pages[english_url] | escape }}" data-french-url="{{ site.data.french_pages[english_url] | escape }}">
   <div class="wrapper">
     {% include cy/site_title.html %}
     {% include cy/menu.html %}
@@ -38,15 +40,7 @@
 
   <script src="/js/jquery-1.7.2.js"></script>
   
-<script>
-(function () {
-  var selector = document.querySelector('.language-selector');
-  var navToggle = document.querySelector('#nav-toggle');
-  navToggle.addEventListener('change', function () { if (navToggle.checked) selector.open = false; });
-  selector.querySelector('summary').addEventListener('click', function () { navToggle.checked = false; });
-  document.addEventListener('click', function (event) { if (!selector.contains(event.target)) selector.open = false; });
-  document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && selector.open) { selector.open = false; selector.querySelector('summary').focus(); } });
-})();
-</script>
+
 </body>
 </html>
+
